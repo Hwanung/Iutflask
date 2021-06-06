@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Create a New Post {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Id">Id</label>
+        <input type="text" name="Id"
+               placeholder="Post title" class="form-control"
+               value="{{ request.form['Id'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="SepalLengthCm">Content</label>
+        <textarea name="SepalLengthCm" placeholder="Post content"
+                  class="form-control">{{ request.form['SepalLengthCm'] }}</textarea>
+    </div>
+        <div class="form-group">
+        <label for="SepalWidthCm">Content</label>
+        <textarea name="SepalWidthCm" placeholder="Post content"
+                  class="form-control">{{ request.form['SepalWidthCm'] }}</textarea>
+    </div>
+        <div class="form-group">
+        <label for="PetalLengthCm">Content</label>
+        <textarea name="PetalLengthCm" placeholder="Post content"
+                  class="form-control">{{ request.form['PetalLengthCm'] }}</textarea>
+    </div>
+        <div class="form-group">
+        <label for="PetalWidthCm">Content</label>
+        <textarea name="PetalWidthCm" placeholder="Post content"
+                  class="form-control">{{ request.form['PetalWidthCm'] }}</textarea>
+    </div>
+        <div class="form-group">
+        <label for="Species">Content</label>
+        <textarea name="Species" placeholder="Post content"
+                  class="form-control">{{ request.form['Species'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

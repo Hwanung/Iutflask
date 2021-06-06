@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ post['Id'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+    <p>{{ post['SepalLengthCm'] }}</p>
+    <p>{{ post['SepalWidthCm'] }}</p>
+    <p>{{ post['PetalLengthCm'] }}</p>
+    <p>{{ post['PetalWidthCm'] }}</p>
+    <p>{{ post['Species'] }}</p>
+
+
+{% endblock %}
