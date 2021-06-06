@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>{% block title %} {{ post['Id'] }} {% endblock %}</h2>
+    <h2>{% block title %} {{ post['id'] }} {% endblock %}</h2>
     <span class="badge badge-primary">{{ post['created'] }}</span>
-    <p>{{ post['SepalLengthCm'] }}</p>
-    <p>{{ post['SepalWidthCm'] }}</p>
-    <p>{{ post['PetalLengthCm'] }}</p>
-    <p>{{ post['PetalWidthCm'] }}</p>
-    <p>{{ post['Species'] }}</p>
+    <h2>Longeur des sepals </h2>
+    <h1>{{ post['SepalLengthCm'] }}</h1>
+    <h2>Largeur des sepals </h2>
+    <h1>{{ post['SepalWidthCm'] }}</h1>
+    <h2>Longeur des petales </h2>
+    <h1>{{ post['PetalLengthCm'] }}</h1>
+    <h2>Largeur des petales </h2>
+    <h1>{{ post['PetalWidthCm'] }}</h1>
+    <h2>Espèce de la fleur </h2>
+    <h1>{{ post['Species'] }}</h1>
 
 
 {% endblock %}

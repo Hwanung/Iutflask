@@ -1,14 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+    body{
+        background-color: mediumpurple ;
+    }
+    h1{
+        color: indigo;
+    }
+    a{
+        color: #eeeeee;
+    }
+</style>
+
     <h1>{% block title %} J'aime les fleurs {% endblock %}</h1>
+    <hr>
     {% for post in posts %}
         <a href="{{ url_for('post', post_id=post['id']) }}">
-            <h2>{{ post['Id'] }}</h2>
+            <h2>{{ post['id'] }}</h2>
         </a>
         <span class="badge badge-primary">{{ post['created'] }}</span>
         <a href="{{ url_for('edit', id=post['id']) }}">
-            <span class="badge badge-warning">C ici pour modifier</span>
+            <span class="badge badge-light">C ici pour modifier</span>
         </a>
         <hr>
     {% endfor %}

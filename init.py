@@ -14,8 +14,8 @@ with open('Iris.csv', 'r') as csvfile:
     for line in reader:
         print(line)
         if line[0] != 'nom':
-            cur.execute("INSERT INTO posts (Id, SepalLengthCm, SepalWidthCm,PetalLengthCm,PetalWidthCm,Species) VALUES (?, ?, ?, ?, ?,?)",
-                        (int(line[0]), float(line[1]), float(line[2]),float(line[3]),float(line[4]),str(line[5])))
+            cur.execute("INSERT INTO posts (SepalLengthCm, SepalWidthCm,PetalLengthCm,PetalWidthCm,Species) VALUES (?, ?, ?, ?, ?)",
+                        (float(line[0]), float(line[1]),float(line[2]),float(line[3]),str(line[4])))
 
 connection.commit()
 connection.close()

@@ -1,50 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Edit "{{ post['Id'] }}" {% endblock %}</h1>
+    <style>
+    body{
+        background-color: mediumpurple ;
+    }
+    h1{
+        color: purple;
+    }
+    a{
+        color: rebeccapurple;
+    }
+</style>
+<h1>{% block title %} Éditer "{{ post['id'] }}" {% endblock %}</h1>
 
 <form method="post">
     <div class="form-group">
-        <label for="Id">Id</label>
-        <input type="text" name="Id" placeholder="Post title"
+        <label for="SepalLengthCm">SepalLengthCm</label>
+        <input type="text" name="SepalLengthCm" placeholder="La largeur des sepals (en cm)"
                class="form-control"
-               value="{{ request.form['Id'] or post['Id'] }}">
+               value="{{ request.form['SepalLengthCm'] or post['SepalLengthCm'] }}">
         </input>
     </div>
 
     <div class="form-group">
-        <label for="SepalLengthCm">Content</label>
-        <textarea name="SepalLengthCm" placeholder="Post content"
-                  class="form-control">{{ request.form['SepalLengthCm'] or post['SepalLengthCm'] }}</textarea>
-    </div>
-    <div class="form-group">
-        <label for="SepalWidthCm">Content</label>
-        <textarea name="SepalWidthCm" placeholder="Post content"
+        <label for="SepalWidthCm">longueur sepals</label>
+        <textarea name="SepalWidthCm" placeholder="La longueur des sepals (en cm)"
                   class="form-control">{{ request.form['SepalWidthCm'] or post['SepalWidthCm'] }}</textarea>
     </div>
     <div class="form-group">
-        <label for="PetalLengthCm">Content</label>
-        <textarea name="PetalLengthCm" placeholder="Post content"
+        <label for="PetalLengthCm">longueur petales</label>
+        <textarea name="PetalLengthCm" placeholder="La longueur des petales (en cm)"
                   class="form-control">{{ request.form['PetalLengthCm'] or post['PetalLengthCm'] }}</textarea>
     </div>
     <div class="form-group">
-        <label for="PetalWidthCm">Content</label>
-        <textarea name="PetalWidthCm" placeholder="Post content"
+        <label for="PetalWidthCm">largeur petales</label>
+        <textarea name="PetalWidthCm" placeholder="La largeur des petales (en cm)"
                   class="form-control">{{ request.form['PetalWidthCm'] or post['PetalWidthCm'] }}</textarea>
     </div>
     <div class="form-group">
-        <label for="Species">Content</label>
-        <textarea name="Species" placeholder="Post content"
+        <label for="Species">Espèce</label>
+        <textarea name="Species" placeholder="Espèce de la fleur (en cm)"
                   class="form-control">{{ request.form['Species'] or post['Species'] }}</textarea>
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">C'est finito</button>
     </div>
 </form>
 <hr>
     <form action="{{ url_for('delete', id=post['id']) }}" method="POST">
-    <input type="submit" value="Delete Post"
+    <input type="submit" value="Suprimado"
             class="btn btn-danger btn-sm"
-            onclick="return confirm('Are you sure you want to delete this post?')">
+            onclick="return confirm('T es sur de vouloir supprimer ?')">
 </form>
 {% endblock %}
